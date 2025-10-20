@@ -12,9 +12,9 @@ export default defineConfig({
 		resolve: true,
 		entry: ["src/main.ts", "src/hello.ts"],
 	},
-	outExtension({ format }) {
-		return {
-			js: format === "cjs" ? ".cjs" : ".js",
-		};
-	},
+	// outExtension({ format }) {
+	// 	return {
+	// 		js: format === "cjs" ? ".cjs" : ".js",
+	// 	};
+	// },
 });

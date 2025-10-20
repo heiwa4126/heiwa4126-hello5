@@ -23,7 +23,8 @@
 		"!dist/**/*.map"
 	],
 	"scripts": {
-		"build": "tsup && chmod +x dist/main.js",
+		"build": "tsup",
+		"build0": "tsup && chmod +x dist/main.js",
 		"test:watch": "vitest",
 		"test": "vitest run",
 		"test:run": "vitest run",
@@ -53,10 +54,8 @@
 		"url": "git+https://github.com/heiwa4126/heiwa4126-hello5.git"
 	},
 	"license": "MIT",
-	"dependencies": {
-		"@heiwa4126/hello5": "file:."
-	},
 	"devDependencies": {
+		"@heiwa4126/hello5": "file:.",
 		"@biomejs/biome": "^2.2.6",
 		"@types/node": "^24.8.1",
 		"ts-node": "^10.9.2",
