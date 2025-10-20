@@ -1,6 +1,6 @@
-# @heiwa4126/hello4
+# @heiwa4126/hello5
 
-[![npm version](https://img.shields.io/npm/v/@heiwa4126/hello4.svg)](https://www.npmjs.com/package/@heiwa4126/hello4)
+[![npm version](https://img.shields.io/npm/v/@heiwa4126/hello5.svg)](https://www.npmjs.com/package/@heiwa4126/hello5)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
@@ -10,7 +10,7 @@ TypeScript hello world library with dual ES modules/CommonJS support. Features G
 ## Installation
 
 ```bash
-npm install @heiwa4126/hello4
+npm install @heiwa4126/hello5
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install @heiwa4126/hello4
 #### ES Modules (MJS)
 
 ```typescript
-import { hello } from "@heiwa4126/hello4";
+import { hello } from "@heiwa4126/hello5";
 
 console.log(hello()); // "Hello!"
 ```
@@ -28,7 +28,7 @@ console.log(hello()); // "Hello!"
 #### CommonJS (CJS)
 
 ```javascript
-const { hello } = require("@heiwa4126/hello4");
+const { hello } = require("@heiwa4126/hello5");
 
 console.log(hello()); // "Hello!"
 ```
@@ -36,7 +36,7 @@ console.log(hello()); // "Hello!"
 #### TypeScript
 
 ```typescript
-import { hello } from "@heiwa4126/hello4";
+import { hello } from "@heiwa4126/hello5";
 
 console.log(hello()); // "Hello!"
 ```
@@ -46,7 +46,7 @@ console.log(hello()); // "Hello!"
 After installation, you can use the CLI command:
 
 ```bash
-heiwa4126-hello4
+heiwa4126-hello5
 ```
 
 ## Development
@@ -87,5 +87,5 @@ MIT
 
 ## Note
 
-[NOTE-ja.md](https://github.com/heiwa4126/heiwa4126-hello4/blob/main/NOTE-ja.md) (on GitHub)
+[NOTE-ja.md](https://github.com/heiwa4126/heiwa4126-hello5/blob/main/NOTE-ja.md) (on GitHub)
 これがこのプロジェクトの本体。

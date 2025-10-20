@@ -1,4 +1,4 @@
-# heiwa4126-hello4 メモ
+# heiwa4126-hello5 メモ
 
 ## これは何か
 
@@ -59,7 +59,7 @@ npm の該当プロジェクトの setting で
 Trusted Publisher の Select your publisher で GitHub Actions ボタン。
 
 - Organization or user: heiwa4126
-- Repository: heiwa4126-hello4
+- Repository: heiwa4126-hello5
 - Workflow filename: publish.yml
 - Environment name: (最初は空で)
 
@@ -74,7 +74,7 @@ Trusted Publisher の Select your publisher で GitHub Actions ボタン。
 
 ## Sigstore 証明がつくと
 
-[npm のプロジェクトのページで](https://www.npmjs.com/package/@heiwa4126/hello4)
+[npm のプロジェクトのページで](https://www.npmjs.com/package/@heiwa4126/hello5)
 
 - バージョンの横にチェックマークがつく (PyPI のチェックマークにはあまり意味がない)
 - ページの底に "Provenance" の節が付く。Rekor へのリンクなど。
