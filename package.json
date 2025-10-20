@@ -3,18 +3,18 @@
 	"version": "0.0.1",
 	"description": "TypeScript hello world library with dual ES modules/CommonJS support. Features GitHub Actions trusted publishing to npmjs with Sigstore attestation.",
 	"type": "module",
-	"main": "./dist/cjs/hello.cjs",
-	"module": "./dist/esm/hello.js",
-	"types": "./dist/esm/hello.d.ts",
+	"main": "./dist/hello.cjs",
+	"module": "./dist/hello.js",
+	"types": "./dist/hello.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/esm/hello.d.ts",
-			"import": "./dist/esm/hello.js",
-			"require": "./dist/cjs/hello.cjs"
+			"types": "./dist/hello.d.ts",
+			"import": "./dist/hello.js",
+			"require": "./dist/hello.cjs"
 		}
 	},
 	"bin": {
-		"heiwa4126-hello5": "dist/esm/main.js"
+		"heiwa4126-hello5": "dist/main.js"
 	},
 	"files": [
 		"dist/**/*.js",
@@ -23,8 +23,7 @@
 		"!dist/**/*.map"
 	],
 	"scripts": {
-		"build": "tsup && npm run set-permissions",
-		"set-permissions": "chmod +x dist/esm/main.js",
+		"build": "tsup && chmod +x dist/main.js",
 		"test:watch": "vitest",
 		"test": "vitest run",
 		"test:run": "vitest run",
@@ -32,7 +31,8 @@
 		"prepublishOnly": "npm run clean && npm run build && npm run test:run",
 		"lint": "biome lint .",
 		"format": "biome format --write .",
-		"format:full": "npm pkg fix && biome format --write . && dprint fmt && textlint --fix \"**/*.md\""
+		"format:full": "npm pkg fix && biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
+		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && ts-node examples/ex3.ts"
 	},
 	"keywords": [
 		"hello-world",
@@ -53,9 +53,13 @@
 		"url": "git+https://github.com/heiwa4126/heiwa4126-hello5.git"
 	},
 	"license": "MIT",
+	"dependencies": {
+		"@heiwa4126/hello5": "file:."
+	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.6",
 		"@types/node": "^24.8.1",
+		"ts-node": "^10.9.2",
 		"tsup": "^8.5.0",
 		"typescript": "^5.9.3",
 		"vitest": "^3.2.4"
