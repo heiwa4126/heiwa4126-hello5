@@ -33,7 +33,9 @@
 		"lint": "biome lint .",
 		"format": "biome format --write .",
 		"format:full": "npm pkg fix && biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
-		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && ts-node examples/ex3.ts"
+		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && ts-node examples/ex3.ts",
+		"prepack": "cp package.json package.json.bak && node scripts/clean-pkg.js",
+		"postpack": "mv package.json.bak package.json"
 	},
 	"keywords": [
 		"hello-world",

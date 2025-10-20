@@ -72,16 +72,13 @@ npm run clean
 
 ## Build Output
 
-The project builds to both ES modules and CommonJS formats:
+The project builds to both ES modules and CommonJS formats in a flat structure:
 
-- `dist/esm/` - ES modules
-- `dist/cjs/` - CommonJS
+- `dist/` - Both ES modules (`.js`) and CommonJS (`.cjs`) files
 
 ## Scripts
 
 - `npm run build` - Build both ESM and CJS versions
-- `npm run build:esm` - Build ES modules only
-- `npm run build:cjs` - Build CommonJS only
 - `npm run test:watch` - Run tests in watch mode
 - `npm test` - Run tests once
 - `npm run clean` - Remove build artifacts
