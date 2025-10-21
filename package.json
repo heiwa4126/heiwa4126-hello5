@@ -38,14 +38,11 @@
 		"postpack": "mv package.json.bak package.json"
 	},
 	"keywords": [
-		"hello-world",
-		"example",
-		"demo",
+		"aws cdk",
+		"utilities",
+		"cli",
 		"typescript",
 		"esm",
-		"commonjs",
-		"cli",
-		"learning",
 		"sigstore",
 		"trusted-publishing",
 		"github-actions"
