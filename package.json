@@ -24,16 +24,17 @@
 	],
 	"scripts": {
 		"build": "tsup",
-		"build0": "tsup && chmod +x dist/main.js",
-		"test:watch": "vitest",
+		"postbuild": "npm run link",
 		"test": "vitest run",
 		"test:run": "vitest run",
+		"test:watch": "vitest",
 		"clean": "rm -rf dist",
-		"prepublishOnly": "npm run clean && npm run build && npm run test:run",
+		"prepublishOnly": "npm run lint && npm run test && npm run clean && npm run build && npm run smoke-test",
 		"lint": "biome lint .",
 		"format": "biome format --write .",
 		"format:full": "npm pkg fix && biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
-		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && ts-node examples/ex3.ts",
+		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && tsx examples/ex3.ts",
+		"link": "mkdir -p node_modules/@heiwa4126 && cd node_modules/@heiwa4126 && rm -f hello5 && ln -sf ../.. hello5",
 		"prepack": "cp package.json package.json.bak && node scripts/clean-pkg.mjs",
 		"postpack": "mv package.json.bak package.json"
 	},
@@ -55,14 +56,14 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.6",
-		"@heiwa4126/hello5": "file:.",
 		"@types/node": "^24.8.1",
-		"ts-node": "^10.9.2",
 		"tsup": "^8.5.0",
+		"tsx": "^4.20.6",
 		"typescript": "^5.9.3",
 		"vitest": "^4.0.8"
 	},
 	"engines": {
 		"node": ">=18.0.0"
-	}
+	},
+	"dependencies": {}
 }
