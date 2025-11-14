@@ -10,7 +10,10 @@ npm プロジェクトを署名付きで npmjs に公開する練習プロジェ
 との違いは
 
 - [tsup](https://github.com/egoist/tsup) にした
-- TODO: pnpm で GitHub から npmjs に direct publishing できるか試す
+- pnpm で GitHub から npmjs に direct publishing できるか試す
+  - 出来た。パッケージのインストールまで pnpm でやって `npm publish` で行ける
+  - warnings は出るけど、ごまかしきれた感じ
+  - 詳しくは [workflow](.github/workflows/publish.yml) を見てください
 
 の点
 
@@ -34,17 +37,18 @@ npm の Trusted Publishing は 「初回の手動 publish を完全にスキッ�
 
 ```sh
 npm pkg fix
-npm run lint
-npm run test
-npm run build
-npm pack --dry-run
-npm login --auth-type=web # 動作チェック
+pnpm run lint
+pnpm run test
+pnpm run build
+pnpm pack
+pnpm login --auth-type=web # 動作チェック
 ```
 
 で、
 
 ```sh
 npm publish --access public --tag dev
+# pnpm ではないことに注意
 # run-scripts の `prepublishOnly` が先に実行される
 ```
 
@@ -70,9 +74,7 @@ Trusted Publisher の Select your publisher で GitHub Actions ボタン。
 - Organization or user: heiwa4126
 - Repository: heiwa4126-hello5
 - Workflow filename: publish.yml
-- Environment name: (最初は空で)
-
-"setup connection" ボタン押す。
+- Environment name: npmjs
 
 ## workflow 書く
 
@@ -81,11 +83,29 @@ Trusted Publisher の Select your publisher で GitHub Actions ボタン。
 [publish.yml](.github/workflows/publish.yml)
 を書きました。
 
+pnpm に変えました。
+
+## GitHub から npmjs へ direct publishing
+
+```sh
+# 最低限のローカルテストを完了する
+pnpm run build
+pnpm run smoke-test
+
+# バージョンつける
+git add --all
+git commit -am '<commit message>'
+npm version '0.0.1-rc.1'  # バージョン番号は適宜アレンジ
+
+# GitHubにpush
+git push --follow-tags # または git push && git push --tags
+```
+
 ## Sigstore 証明がつくと
 
 [npm のプロジェクトのページで](https://www.npmjs.com/package/@heiwa4126/hello5)
 
-- バージョンの横にチェックマークがつく (PyPI のチェックマークにはあまり意味がない)
+- バージョンの横にチェックマークがつく
 - ページの底に "Provenance" の節が付く。Rekor へのリンクなど。
 
 ## その後
