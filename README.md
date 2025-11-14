@@ -15,6 +15,8 @@ TypeScript hello world library with dual ES modules/CommonJS support. Features G
 ## Installation
 
 ```bash
+pnpm add @heiwa4126/hello5
+# or
 npm install @heiwa4126/hello5
 ```
 
@@ -58,16 +60,16 @@ heiwa4126-hello5
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Build the project
-npm run build
+pnpm run build
 
 # Run tests
-npm test
+pnpm test
 
 # Clean build artifacts
-npm run clean
+pnpm run clean
 ```
 
 ## Build Output
@@ -78,10 +80,10 @@ The project builds to both ES modules and CommonJS formats in a flat structure:
 
 ## Scripts
 
-- `npm run build` - Build both ESM and CJS versions
-- `npm run test:watch` - Run tests in watch mode
-- `npm test` - Run tests once
-- `npm run clean` - Remove build artifacts
+- `pnpm run build` - Build both ESM and CJS versions
+- `pnpm run test:watch` - Run tests in watch mode
+- `pnpm test` - Run tests once
+- `pnpm run clean` - Remove build artifacts
 
 ## License
 

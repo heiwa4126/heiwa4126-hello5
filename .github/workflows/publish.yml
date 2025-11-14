@@ -27,21 +27,37 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Setup Node.js (with npm cache)
+      - name: Setup Node.js
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version: "20"
           registry-url: "https://registry.npmjs.org"
           token: "" # .npmrc へ token を書かせない(OIDC を確実に使う)
-          cache: "npm" # npm のダウンロードキャッシュを有効化
-      # cache-dependency-path: |
-      #   package-lock.json # 複数パスがある場合は明示(monorepo 等)
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Use latest npm supporting OIDC provenance
-        run: npm i -g npm@latest # npm を 11.5.1+ に
+        run: npm i -g npm@latest # npm を 11.5.1+ に（publish用）
 
-      - name: Install dependencies (npm ci)
-        run: npm ci
+      - name: Install dependencies (pnpm install)
+        run: pnpm install --frozen-lockfile
 
       # - run: npm run build --if-present
       # - run: npm test
