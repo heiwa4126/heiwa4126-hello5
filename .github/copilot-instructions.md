@@ -7,12 +7,14 @@ This is a TypeScript library (`@heiwa4126/hello5`) that demonstrates modern npm 
 ## Architecture & Build System
 
 **Dual Module Support Pattern:**
+
 - Uses `tsup` for bundling with both ESM (`.js`) and CJS (`.cjs`) outputs
 - `package.json` exports field provides dual compatibility: `"import": "./dist/hello.js"` and `"require": "./dist/hello.cjs"`
 - TypeScript is configured with `"module": "nodenext"` for modern module resolution
 - CLI entry point (`src/main.ts`) uses ESM imports with `.js` extension for compatibility
 
 **Critical Build Flow:**
+
 ```bash
 npm run build    # tsup builds both formats + types
 npm test        # vitest with TypeScript support
@@ -22,16 +24,19 @@ npm run smoke-test  # Tests all three usage patterns (ESM/CJS/TS)
 ## Key Development Patterns
 
 **Testing Strategy:**
+
 - Use `vitest` with globals enabled (see `vite.config.ts`)
 - Import source files with `.js` extensions even from `.ts` files: `import { hello } from "../src/hello.js"`
 - Run `npm run smoke-test` to verify all module formats work correctly
 
 **Package.json Script Conventions:**
+
 - `prepublishOnly`: Runs full build + test pipeline automatically before any publish
 - `prepack`/`postpack`: Strips scripts from package.json during packaging for security
 - Scripts use `npm pkg` commands for package.json manipulation
 
 **Formatting & Linting:**
+
 - Biome handles both formatting and linting (replaces ESLint + Prettier)
 - Line width: 100 characters
 - Strict TypeScript with `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes`
@@ -40,12 +45,14 @@ npm run smoke-test  # Tests all three usage patterns (ESM/CJS/TS)
 
 **Trusted Publishing Setup:**
 This project uses npm's trusted publishing feature. The workflow in `.github/workflows/publish.yml`:
+
 - Triggers on semantic version tags: `v1.2.3` (release) or `v1.2.3-rc.1` (prerelease)
 - Only runs if `github.repository_owner == github.actor` (security)
 - Uses OIDC authentication (no npm tokens required)
 - Automatically applies `--tag dev` for prerelease versions (contains `-`)
 
 **Version Tagging:**
+
 - Normal releases: `v1.2.3` → `latest` tag on npm
 - Prereleases: `v1.2.3-rc.1` → `dev` tag on npm
 

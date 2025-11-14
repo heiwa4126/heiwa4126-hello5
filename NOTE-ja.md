@@ -5,12 +5,21 @@
 npm プロジェクトを署名付きで npmjs に公開する練習プロジェクト。
 中身は "Hello!"を返す hello()関数だけ。
 
+[heiwa4126/heiwa4126-hello4](https://github.com/heiwa4126/heiwa4126-hello4)
+(npm の [@heiwa4126/hello4](https://www.npmjs.com/package/@heiwa4126/hello4))
+との違いは
+
+- [tsup](https://github.com/egoist/tsup) にした
+- TODO: pnpm で GitHub から npmjs に direct publishing できるか試す
+
+の点
+
 ## 作った手順
 
 1. npm パッケージ作る。
    - TypeScript で書いて mjs,cjs としてビルドするタイプ
    - Test suit は vitest(TypeScript で), formatter/linter は Biome
-2. npm で prepatch バージョンとして公開する(まず手動)。
+2. npm で prepatch(dev) バージョンとして公開する(まず手動)。
 3. GitHub Actions から Trusted publishing で npm にパブリッシュする
    - たぶん GitHub 上で `npm publish` した段階で Sigstore 署名がついてしまう
    - suzuki-shunsuke/pinact, rhysd/actionlint, nektos/act などを使う (あと aquaproj/aqua)
@@ -35,7 +44,7 @@ npm login --auth-type=web # 動作チェック
 で、
 
 ```sh
-npm publish --access public --tag latest
+npm publish --access public --tag dev
 # run-scripts の `prepublishOnly` が先に実行される
 ```
 

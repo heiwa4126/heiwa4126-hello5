@@ -1,9 +1,9 @@
-# @heiwa4126/hello5
+# heiwa4126-hello5 (@heiwa4126/hello5)
 
 NOTE: [heiwa4126/heiwa4126-hello4](https://github.com/heiwa4126/heiwa4126-hello4)
 を
 [egoist/tsup](https://github.com/egoist/tsup)
-で書き換えたやつ。作業中。まだ npmjs には publish してない
+で書き換えたやつ。作業中
 
 [![npm version](https://img.shields.io/npm/v/@heiwa4126/hello5.svg)](https://www.npmjs.com/package/@heiwa4126/hello5)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
