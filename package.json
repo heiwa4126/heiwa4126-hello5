@@ -39,7 +39,7 @@
 		"postpack": "mv package.json.bak package.json"
 	},
 	"keywords": [
-		"aws cdk",
+		"helloworld",
 		"utilities",
 		"cli",
 		"typescript",
