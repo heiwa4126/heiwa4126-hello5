@@ -37,11 +37,14 @@
 		"postpack": "mv package.json.bak package.json"
 	},
 	"keywords": [
-		"helloworld",
-		"utilities",
-		"cli",
+		"hello-world",
+		"example",
+		"demo",
 		"typescript",
 		"esm",
+		"commonjs",
+		"cli",
+		"learning",
 		"sigstore",
 		"trusted-publishing",
 		"github-actions"
