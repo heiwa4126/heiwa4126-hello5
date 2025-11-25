@@ -1,18 +1,17 @@
 # heiwa4126-hello5 (@heiwa4126/hello5)
 
-[heiwa4126/heiwa4126-hello4](https://github.com/heiwa4126/heiwa4126-hello4)
-を以下のように変更したもの。
-
-- [egoist/tsup](https://github.com/egoist/tsup) で書き換え
-- npm から pnpm にした
-- scripts/clean-pkg.mjs をパッケージにしてそれを使うようにした(@heiwa4126/clean-publish-scripts)
-
 [![npm version](https://img.shields.io/npm/v/@heiwa4126/hello5.svg)](https://www.npmjs.com/package/@heiwa4126/hello5)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
 
 TypeScript hello world library with dual ES modules/CommonJS support. Features GitHub Actions trusted publishing to npmjs with Sigstore attestation.
+
+Modified version of [heiwa4126/heiwa4126-hello4](https://github.com/heiwa4126/heiwa4126-hello4) with the following changes:
+
+- Rewritten using [egoist/tsup](https://github.com/egoist/tsup)
+- Migrated from npm to pnpm
+- Extracted scripts/clean-pkg.mjs into a reusable package (@heiwa4126/clean-publish-scripts)
 
 ## Installation
 
