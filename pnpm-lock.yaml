@@ -11,6 +11,9 @@ importers:
       '@biomejs/biome':
         specifier: ^2.3.7
         version: 2.3.7
+      '@heiwa4126/clean-publish-scripts':
+        specifier: ^0.0.1
+        version: 0.0.1
       '@types/node':
         specifier: ^24.10.1
         version: 24.10.1
@@ -393,6 +396,11 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@heiwa4126/clean-publish-scripts@0.0.1':
+    resolution: {integrity: sha512-07VumLEYUwuFpVx2QuIUDIIHoCN1jF0sMmFRdTx8SxFvcmQckfSg8obDirZuePAjERjeO04VPsvG6W7g7MTV/g==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1101,6 +1109,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.0':
     optional: true
+
+  '@heiwa4126/clean-publish-scripts@0.0.1': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
