@@ -1,7 +1,7 @@
 # heiwa4126-hello5 (@heiwa4126/hello5)
 
 [heiwa4126/heiwa4126-hello4](https://github.com/heiwa4126/heiwa4126-hello4)
-を以下のように変更。
+を以下のように変更したもの。
 
 - [egoist/tsup](https://github.com/egoist/tsup) で書き換え
 - npm から pnpm にした
@@ -64,14 +64,8 @@ heiwa4126-hello5
 # Install dependencies
 pnpm install
 
-# Build the project
-pnpm run build
-
-# Run tests
-pnpm test
-
-# Clean build artifacts
-pnpm run clean
+# lint, test, clean, build, pack and smoke test (without publishing)
+pnpm run prepublishOnly
 ```
 
 ## Build Output

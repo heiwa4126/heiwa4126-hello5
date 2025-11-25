@@ -10,12 +10,14 @@ npm プロジェクトを署名付きで npmjs に公開する練習プロジェ
 との違いは
 
 - [tsup](https://github.com/egoist/tsup) にした
+- npm から pnpm にした
 - pnpm で GitHub から npmjs に direct publishing できるか試す
   - 出来た。パッケージのインストールまで pnpm でやって `npm publish` で行ける
   - warnings は出るけど、ごまかしきれた感じ
   - 詳しくは [workflow](.github/workflows/publish.yml) を見てください
+- scripts/clean-pkg.mjs をパッケージにしてそれを使うようにした(@heiwa4126/clean-publish-scripts)
 
-の点
+の 4 点
 
 ## 作った手順
 
