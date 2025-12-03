@@ -5,6 +5,7 @@
 	"type": "module",
 	"main": "./dist/hello.cjs",
 	"module": "./dist/hello.js",
+	"browser": "./dist/hello.global.js",
 	"types": "./dist/hello.d.ts",
 	"exports": {
 		".": {
@@ -14,7 +15,7 @@
 		}
 	},
 	"bin": {
-		"heiwa4126-hello5": "./dist/main.js"
+		"heiwa4126-hello5": "./dist/cli.js"
 	},
 	"files": [
 		"dist/**/*.js",
@@ -23,7 +24,7 @@
 		"!dist/**/*.map"
 	],
 	"scripts": {
-		"cli": "tsx ./src/main.ts",
+		"cli": "tsx ./src/cli.ts",
 		"build": "tsup",
 		"test": "vitest run",
 		"test:run": "vitest run",
@@ -33,7 +34,7 @@
 		"lint": "biome lint .",
 		"format": "biome format --write .",
 		"format:full": "pnpm pkg fix && biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
-		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && tsx examples/ex3.ts && node dist/main.js",
+		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && tsx examples/ex3.ts && node dist/cli.js -h && node examples/ex4.browser.mjs",
 		"prepack": "clean-publish-scripts -c",
 		"postpack": "clean-publish-scripts -r"
 	},
