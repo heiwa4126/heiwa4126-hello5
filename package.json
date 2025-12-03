@@ -5,10 +5,12 @@
 	"type": "module",
 	"main": "./dist/hello.cjs",
 	"module": "./dist/hello.js",
+	"browser": "./dist/hello.global.js",
 	"types": "./dist/hello.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/hello.d.ts",
+			"browser": "./dist/hello.global.js",
 			"import": "./dist/hello.js",
 			"require": "./dist/hello.cjs"
 		}
@@ -19,6 +21,7 @@
 	"files": [
 		"dist/**/*.js",
 		"dist/**/*.cjs",
+		"dist/**/*.global.js",
 		"dist/**/*.d.ts",
 		"!dist/**/*.map"
 	],
