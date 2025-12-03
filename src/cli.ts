@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import pkg from "../package.json" with { type: "json" };
 import { hello } from "./hello.js";
 
