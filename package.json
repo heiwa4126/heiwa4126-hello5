@@ -23,6 +23,7 @@
 		"!dist/**/*.map"
 	],
 	"scripts": {
+		"cli": "tsx ./src/main.ts",
 		"build": "tsup",
 		"test": "vitest run",
 		"test:run": "vitest run",
