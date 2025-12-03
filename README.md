@@ -49,6 +49,26 @@ import { hello } from "@heiwa4126/hello5";
 console.log(hello()); // "Hello!"
 ```
 
+#### Browser ESM Module Example (CDN)
+
+ESM.sh:
+
+```html
+<!DOCTYPE html>
+<div id="app">loading...</div>
+
+<script type="module">
+  import { hello } from "https://esm.sh/@heiwa4126/hello5";
+
+  document.getElementById("app").innerText = hello();
+</script>
+```
+
+Other CDNs:
+
+- jsDelivr [@heiwa4126/hello5 CDN by jsDelivr - A CDN for npm and GitHub](https://www.jsdelivr.com/package/npm/@heiwa4126/hello5)
+- unpkg [UNPKG](https://app.unpkg.com/@heiwa4126/hello5)
+
 ### As a CLI tool
 
 After installation, you can use the CLI command:

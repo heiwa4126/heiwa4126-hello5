@@ -4,6 +4,7 @@
 	"description": "TypeScript hello world library with dual ES modules/CommonJS support. Features GitHub Actions trusted publishing to npmjs with Sigstore attestation.",
 	"type": "module",
 	"main": "./dist/hello.cjs",
+	"module": "./dist/hello.js",
 	"types": "./dist/hello.d.ts",
 	"exports": {
 		".": {
@@ -59,13 +60,13 @@
 	"homepage": "https://github.com/heiwa4126/heiwa4126-hello5#readme",
 	"license": "MIT",
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.7",
+		"@biomejs/biome": "^2.3.8",
 		"@heiwa4126/clean-publish-scripts": "^0.0.1",
 		"@types/node": "^24.10.1",
 		"tsup": "^8.5.1",
-		"tsx": "^4.20.6",
+		"tsx": "^4.21.0",
 		"typescript": "^5.9.3",
-		"vitest": "^4.0.14"
+		"vitest": "^4.0.15"
 	},
 	"engines": {
 		"node": ">=18.0.0"
