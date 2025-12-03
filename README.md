@@ -66,8 +66,20 @@ ESM.sh:
 
 Other CDNs:
 
-- jsDelivr [@heiwa4126/hello5 CDN by jsDelivr - A CDN for npm and GitHub](https://www.jsdelivr.com/package/npm/@heiwa4126/hello5)
-- unpkg [UNPKG](https://app.unpkg.com/@heiwa4126/hello5)
+- jsDelivr - [@heiwa4126/hello5 CDN by jsDelivr - A CDN for npm and GitHub](https://www.jsdelivr.com/package/npm/@heiwa4126/hello5)
+- unpkg - <https://app.unpkg.com/@heiwa4126/hello5>
+
+#### Browser Classic Script Example (CDN)
+
+```html
+<!DOCTYPE html>
+<div id="app">loading...</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@heiwa4126/hello5/dist/hello.global.min.js"></script>
+<script>
+  document.getElementById("app").innerText = Heiwa4126Hello5.hello();
+</script>
+```
 
 ### As a CLI tool
 
