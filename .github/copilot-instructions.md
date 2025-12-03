@@ -4,6 +4,18 @@
 
 This is a TypeScript library (`@heiwa4126/hello5`) that demonstrates modern npm packaging with dual ESM/CJS support and automated trusted publishing to npmjs via GitHub Actions with Sigstore attestation. The library exports a simple `hello()` function and provides a CLI tool.
 
+## Build Outputs
+
+The build produces the following outputs:
+
+- **Node.js:**
+	- ESM (`.js`)
+	- CommonJS (`.cjs`)
+	- TypeScript definitions (`.d.ts`)
+- **Browser:**
+	- ESM (for CDN import, e.g. esm.sh, jsDelivr, unpkg)
+	- Classic Script (IIFE, exposes `Heiwa4126Hello5` global)
+
 ## Architecture & Build System
 
 **Dual Module Support Pattern:**
