@@ -73,8 +73,18 @@ Other CDNs:
 
 After installation, you can use the CLI command:
 
-```bash
-heiwa4126-hello5
+```console
+$ heiwa4126-hello5 -h
+
+Usage: heiwa4126-hello5 [-h|--help] [-V|--version]
+
+Options:
+  -h, --help     Show this help message
+  -V, --version  Show version
+
+$ heiwa4126-hello5
+
+Hello!
 ```
 
 ## Development
