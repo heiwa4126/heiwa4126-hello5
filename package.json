@@ -33,7 +33,7 @@
 		"prepublishOnly": "pnpm run lint && pnpm run test && pnpm run clean && pnpm run build && pnpm run smoke-test",
 		"lint": "biome lint .",
 		"format": "biome format --write .",
-		"format:full": "pnpm pkg fix && biome format --write . && textlint --fix \"**/*.md\"",
+		"format:full": "pnpm pkg fix && biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
 		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && tsx examples/ex3.ts && node dist/cli.js -h && node examples/ex4.browser.mjs",
 		"prepack": "clean-publish-scripts -c",
 		"postpack": "clean-publish-scripts -r",
