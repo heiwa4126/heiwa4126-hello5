@@ -36,7 +36,8 @@
 		"format:full": "pnpm pkg fix && biome format --write . && textlint --fix \"**/*.md\"",
 		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && tsx examples/ex3.ts && node dist/cli.js -h && node examples/ex4.browser.mjs",
 		"prepack": "clean-publish-scripts -c",
-		"postpack": "clean-publish-scripts -r"
+		"postpack": "clean-publish-scripts -r",
+		"start": "pnpx serve ."
 	},
 	"keywords": [
 		"hello-world",
