@@ -88,11 +88,11 @@ After installation, you can use the CLI command:
 ```console
 $ heiwa4126-hello5 -h
 
-Usage: heiwa4126-hello5 [-h|--help] [-V|--version]
+Usage: heiwa4126-hello5 [-h|--help] [-v|--version]
 
 Options:
   -h, --help     Show this help message
-  -V, --version  Show version
+  -v, --version  Show version
 
 $ heiwa4126-hello5
 

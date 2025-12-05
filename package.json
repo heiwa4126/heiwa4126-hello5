@@ -30,7 +30,7 @@
 		"test:run": "vitest run",
 		"test:watch": "vitest",
 		"clean": "rm -rf dist",
-		"prepublishOnly": "pnpm run lint && pnpm run test && pnpm run clean && pnpm run build && pnpm run smoke-test",
+		"prepublishOnly": "pnpm audit && pnpm run lint && pnpm run test && pnpm run clean && pnpm run build && pnpm run smoke-test",
 		"lint": "biome lint .",
 		"format": "biome format --write .",
 		"format:full": "pnpm pkg fix && biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",

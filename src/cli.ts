@@ -3,11 +3,11 @@ import pkg from "../package.json" with { type: "json" };
 import { hello } from "./hello.js";
 
 function printHelp() {
-	console.log(`Usage: heiwa4126-hello5 [-h|--help] [-V|--version]
+	console.log(`Usage: heiwa4126-hello5 [-h|--help] [-v|--version]
 
 Options:
   -h, --help     Show this help message
-  -V, --version  Show version`);
+  -v, --version  Show version`);
 }
 
 function printVersion() {
@@ -20,7 +20,7 @@ function main() {
 		printHelp();
 		process.exit(0);
 	}
-	if (argv.includes("-V") || argv.includes("--version")) {
+	if (argv.includes("-v") || argv.includes("--version")) {
 		printVersion();
 		process.exit(0);
 	}
