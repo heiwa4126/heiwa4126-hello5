@@ -39,7 +39,8 @@
 		"postpack": "clean-publish-scripts -r",
 		"start": "pnpx serve .",
 		"trivy": "trivy config . && trivy fs --exit-code 1 --severity HIGH,CRITICAL .",
-		"sbom": "trivy fs --scanners vuln --format spdx-json --output sbom.spdx.json ."
+		"sbom": "trivy fs --scanners vuln --format spdx-json --output sbom.spdx.json .",
+		"osv-scan": "osv-scanner ."
 	},
 	"keywords": [
 		"hello-world",

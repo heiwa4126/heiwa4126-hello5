@@ -154,3 +154,27 @@ if (!process.env.CI && !process.env.GITHUB_ACTIONS) {
 ```
 
 こんな感じ。
+
+## osv-scan
+
+ワークフローに Google の OSV-Scanner を追加した。
+
+SARIF を生成して GitHub Security にレポートもしてるので、
+Actions のログで
+osv-scan ジョブの "Print Code Scanning URL"
+のところに URL が出てるので、それを開くこと。
+
+例:
+<https://github.com/heiwa4126/heiwa4126-hello5/security/code-scanning?query=is%3Aopen+branch%3Av0.0.6-beta.3+tool%3Aosv-scanner>
+
+「正常だと空」なのでつまらない。
+
+## ビルドするとできるものの整理
+
+- ライブラリとして使う
+  - Node 用 mjs, cjs
+  - ブラウザ用 mjs (cjs もたぶん ESM enable になってるので使える)
+  - ブラウザでクラッシックスクリプトとして使える IIFE
+- CLI(Node を使う)
+
+今回 Node 版とブラウザ版で同じコードが使える(Buffer とか DOM 直操作とかないので)。
