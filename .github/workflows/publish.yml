@@ -8,6 +8,16 @@ on:
       # プリリリースのみ: 例) v1.2.3-rc.1, v1.2.3-beta など(必ず '-' が付く)
       - "v[0-9]+.[0-9]+.[0-9]+-*"
 
+permissions:
+  # Only need to read contents
+  contents: read
+  # Required to upload SARIF file to CodeQL
+  actions: read
+  # Require writing security events to upload SARIF file to security tab
+  security-events: write
+  # OIDC に必須
+  id-token: write
+
 concurrency:
   group: publish-${{ github.ref }}
   cancel-in-progress: true
@@ -17,13 +27,6 @@ jobs:
     # Only run if pushed by repository owner
     if: github.repository_owner == github.actor
     uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@b77c075a1235514558f0eb88dbd31e22c45e0cd2 # v2.3.0
-    permissions:
-      # Required to upload SARIF file to CodeQL
-      actions: read
-      # Require writing security events to upload SARIF file to security tab
-      security-events: write
-      # Only need to read contents
-      contents: read
     with:
       scan-args: |-
         --lockfile=pnpm-lock.yaml
@@ -35,9 +38,6 @@ jobs:
     needs: osv-scan
     runs-on: ubuntu-latest
     environment: npmjs
-    permissions:
-      contents: read
-      id-token: write # OIDC に必須
     steps:
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
