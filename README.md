@@ -9,7 +9,8 @@ TypeScript hello world library with dual ES modules/CommonJS support. Features G
 
 Modified version of [heiwa4126/heiwa4126-hello4](https://github.com/heiwa4126/heiwa4126-hello4) with the following changes:
 
-- Rewritten using [egoist/tsup](https://github.com/egoist/tsup)
+- ~~Rewritten using [egoist/tsup](https://github.com/egoist/tsup)~~
+- Rewritten using [rolldown/tsdown](https://github.com/rolldown/tsdown/)
 - Migrated from npm to pnpm
 - Extracted scripts/clean-pkg.mjs into a reusable package (@heiwa4126/clean-publish-scripts)
 
