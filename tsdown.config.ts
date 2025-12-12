@@ -1,4 +1,4 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from "tsdown";
 
 export default defineConfig([
 	{
@@ -6,7 +6,7 @@ export default defineConfig([
 		entry: ["src/hello.ts"],
 		format: ["esm", "cjs"],
 		outDir: "dist",
-		bundle: false,
+		unbundle: true,
 		splitting: false,
 		sourcemap: false,
 		minify: false,
@@ -21,7 +21,7 @@ export default defineConfig([
 		entry: ["src/cli.ts"],
 		format: ["esm"],
 		outDir: "dist",
-		bundle: false,
+		unbundle: true,
 		splitting: false,
 		sourcemap: false,
 		minify: true,
@@ -38,7 +38,6 @@ export default defineConfig([
 		clean: false,
 		dts: false,
 		globalName: "Heiwa4126Hello5",
-		bundle: true,
 		minify: true,
 		outExtension: () => ({ js: ".global.js" }),
 	},
