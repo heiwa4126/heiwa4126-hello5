@@ -68,8 +68,9 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.8",
 		"@heiwa4126/clean-publish-scripts": "^0.0.2",
-		"@types/node": "^25.0.1",
-		"tsdown": "^0.17.3",
+		"@types/node": "^25.0.2",
+		"@vitest/coverage-v8": "4.0.15",
+		"tsdown": "^0.17.4",
 		"tsx": "^4.21.0",
 		"typescript": "^5.9.3",
 		"vitest": "^4.0.15"
