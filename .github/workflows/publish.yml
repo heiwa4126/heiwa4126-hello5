@@ -25,9 +25,7 @@ jobs:
       # Only need to read contents
       contents: read
     with:
-      scan-args: |-
-        --lockfile=pnpm-lock.yaml
-        ./
+      scan-args: "-r ."
 
   publish:
     # Only run if pushed by repository owner and after OSV scan passes
@@ -72,7 +70,9 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Use latest npm supporting OIDC provenance
-        run: npm i -g npm@latest # npm を 11.5.1+ に（publish用）
+        run: npm i -g npm@latest # npm を 11.5.1+ に (publish用)
+      - name: Show npm version
+        run: npm --version
 
       - name: Install dependencies (pnpm install)
         run: pnpm install --frozen-lockfile
