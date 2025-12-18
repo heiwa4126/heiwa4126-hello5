@@ -38,6 +38,8 @@
 		"smoke-test": "node examples/ex1.mjs && node examples/ex2.cjs && tsx examples/ex3.ts && node dist/cli.js -h && node examples/ex4.browser.mjs",
 		"prepack": "clean-publish-scripts -c",
 		"postpack": "clean-publish-scripts -r",
+		"version:prerelase": "npm version prerelease --preid=rc",
+		"version:patch": "npm version patch",
 		"start": "pnpx serve .",
 		"trivy": "trivy config . && trivy fs --exit-code 1 --severity HIGH,CRITICAL .",
 		"sbom": "trivy fs --scanners vuln --format spdx-json --output sbom.spdx.json .",
