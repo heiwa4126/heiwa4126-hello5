@@ -1,3 +1,4 @@
 {
-	"cSpell.words": ["outbase", "Rekor", "SARIF"]
+	"cSpell.words": ["outbase", "Rekor", "SARIF"],
+	"github-actions.workflows.pinned.workflows": [".github/workflows/publish.yml"]
 }
