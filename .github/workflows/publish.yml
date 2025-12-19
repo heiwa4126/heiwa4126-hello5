@@ -1,4 +1,5 @@
-name: Direct publishing to npmjs from GitHub using pnpm and npm with OIDC Trusted Publishing
+name: Publish to npm
+# Direct publishing to npmjs from GitHub using pnpm and npm with OIDC Trusted Publishing
 
 on:
   push:
