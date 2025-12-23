@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<div id="app">loading...</div>
+<div>
+	<span id="app">loading...</span>
+	(v<span id="version">x.x.x</span>)
+</div>
 
 <script src="https://unpkg.com/@heiwa4126/hello5/dist/hello.global.js">
 </script>
 <script>
 document.getElementById("app").innerText = Heiwa4126Hello5.hello();
+document.getElementById("version").innerText = Heiwa4126Hello5.ver;
 </script>

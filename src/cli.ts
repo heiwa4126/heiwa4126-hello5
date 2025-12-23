@@ -1,6 +1,5 @@
 #! /usr/bin/env node
-import pkg from "../package.json" with { type: "json" };
-import { hello } from "./hello.js";
+import { hello, ver } from "./hello.js";
 
 function printHelp() {
 	console.log(`Usage: heiwa4126-hello5 [-h|--help] [-v|--version]
@@ -11,7 +10,7 @@ Options:
 }
 
 function printVersion() {
-	console.log(String(pkg.version));
+	console.log(ver());
 }
 
 function main() {
