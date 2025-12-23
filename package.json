@@ -3,15 +3,15 @@
 	"version": "0.0.7-rc.1",
 	"description": "TypeScript hello world library with dual ES modules/CommonJS support. Features GitHub Actions trusted publishing to npmjs with Sigstore attestation.",
 	"type": "module",
-	"main": "./dist/hello.cjs",
-	"module": "./dist/hello.js",
-	"browser": "./dist/hello.global.js",
-	"types": "./dist/hello.d.ts",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"browser": "./dist/index.global.js",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/hello.d.ts",
-			"import": "./dist/hello.js",
-			"require": "./dist/hello.cjs"
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
 		}
 	},
 	"bin": {

@@ -8,10 +8,10 @@ function fixCjsExtension({ format }: { format: string }) {
 export default defineConfig([
 	{
 		// nodejs libs(ESM + CJS), browser libs(ESM)
-		entry: ["src/hello.ts"],
+		clean: true,
+		entry: ["src/index.ts"],
 		format: ["esm", "cjs"],
 		outDir: "dist",
-		clean: true,
 		unbundle: true,
 		sourcemap: false,
 		minify: false,
@@ -20,10 +20,10 @@ export default defineConfig([
 	},
 	{
 		// cli (ESM only)
+		clean: false,
 		entry: ["src/cli.ts"],
 		format: ["esm"],
 		outDir: "dist",
-		clean: true,
 		unbundle: true,
 		sourcemap: false,
 		minify: true,
@@ -32,11 +32,12 @@ export default defineConfig([
 	},
 	// Classic Script for Browser
 	{
-		entry: ["src/hello.ts"],
+		clean: false,
+		entry: ["src/index.ts"],
 		format: ["iife"],
 		outDir: "dist",
+		unbundle: false,
 		sourcemap: false,
-		clean: false,
 		dts: false,
 		globalName: "Heiwa4126Hello5",
 		minify: true,

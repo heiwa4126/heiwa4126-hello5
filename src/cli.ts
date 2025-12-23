@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-import { hello, ver } from "./hello.js";
+import { hello, version } from "./index.js";
 
 function printHelp() {
 	console.log(`Usage: heiwa4126-hello5 [-h|--help] [-v|--version]
@@ -10,7 +10,7 @@ Options:
 }
 
 function printVersion() {
-	console.log(ver());
+	console.log(version);
 }
 
 function main() {

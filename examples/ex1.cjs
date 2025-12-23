@@ -1,4 +1,4 @@
 // npm build した後に実行すること
-const { hello, ver } = require("@heiwa4126/hello5");
+const { hello, version } = require("@heiwa4126/hello5");
 
-console.log(`${hello()} (v${ver})`); // "Hello! (v9.9.9)"
+console.log(`${hello()} (v${version})`); // "Hello! (v9.9.9)"
