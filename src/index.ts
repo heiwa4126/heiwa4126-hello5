@@ -1,4 +1,7 @@
-import { hello } from "./hello.js";
-import { version } from "./version.js";
+import pkg from "../package.json" with { type: "json" };
 
-export { hello, version };
+export const version = pkg.version;
+
+export function hello(): string {
+	return "Hello!";
+}
