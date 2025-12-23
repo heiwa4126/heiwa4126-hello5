@@ -76,7 +76,7 @@ Other CDNs:
 <!DOCTYPE html>
 <div id="app">loading...</div>
 
-<script src="https://cdn.jsdelivr.net/npm/@heiwa4126/hello5/dist/hello.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@heiwa4126/hello5/dist/index.global.min.js"></script>
 <script>
   document.getElementById("app").innerText = Heiwa4126Hello5.hello();
 </script>
