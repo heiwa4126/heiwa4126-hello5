@@ -101,12 +101,6 @@ jobs:
           echo "Version: $VERSION"
           echo "Is prerelease: $is_prerelease"
 
-      - name: Publish to npm via OIDC (Trusted publishing)
-        env:
-          NODE_AUTH_TOKEN: "" # 念のため publish 前も空
-        run: npm publish --access public ${{ steps.check-prerelease.outputs.tag_option }}
-        # Trusted publishing を使うと provenance は自動生成されるので --provenance は不要
-
       # おまけ。releases にもtgzをアップロードする
       - name: Create GitHub Release
         uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
@@ -116,3 +110,9 @@ jobs:
           prerelease: ${{ contains(github.ref_name, '-') }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm via OIDC (Trusted publishing)
+        env:
+          NODE_AUTH_TOKEN: "" # 念のため publish 前も空
+        run: npm publish --access public ${{ steps.check-prerelease.outputs.tag_option }}
+        # Trusted publishing を使うと provenance は自動生成されるので --provenance は不要
