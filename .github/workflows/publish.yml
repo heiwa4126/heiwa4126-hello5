@@ -108,6 +108,8 @@ jobs:
       #   # Trusted publishing を使うと provenance は自動生成されるので --provenance は不要
 
       # おまけ。releases にもtgzをアップロードする
+      - name: build package
+        run: pnpm run build
       - name: Pack package tarball
         run: pnpm pack
       - name: Create GitHub Release
