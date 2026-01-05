@@ -32,7 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: npmjs
     permissions:
-      contents: read
+      # contents: read
+      contents: write # for releases
       id-token: write # OIDC に必須
     steps:
       - name: Checkout
