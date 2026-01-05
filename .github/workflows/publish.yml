@@ -101,11 +101,11 @@ jobs:
           echo "Version: $VERSION"
           echo "Is prerelease: $is_prerelease"
 
-      # - name: Publish to npm via OIDC (Trusted publishing)
-      #   env:
-      #     NODE_AUTH_TOKEN: "" # 念のため publish 前も空
-      #   run: npm publish --access public ${{ steps.check-prerelease.outputs.tag_option }}
-      #   # Trusted publishing を使うと provenance は自動生成されるので --provenance は不要
+      - name: Publish to npm via OIDC (Trusted publishing)
+        env:
+          NODE_AUTH_TOKEN: "" # 念のため publish 前も空
+        run: npm publish --access public ${{ steps.check-prerelease.outputs.tag_option }}
+        # Trusted publishing を使うと provenance は自動生成されるので --provenance は不要
 
       # おまけ。releases にもtgzをアップロードする
       - name: build package
