@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <div>
 	<span id="app">loading...</span>
 	(v<span id="version">x.x.x</span>)
 </div>
 
 <script type="module">
-import { hello, version } from "https://esm.sh/@heiwa4126/hello5";
-
-  document.getElementById("app").innerText = hello();
-  document.getElementById("version").innerText = version;
+	import { hello, version } from "https://esm.sh/@heiwa4126/hello5";
+	document.getElementById("app").innerText = hello();
+	document.getElementById("version").innerText = version;
 </script>
