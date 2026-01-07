@@ -1,4 +1,4 @@
 {
-	"cSpell.words": ["cloc", "outbase", "qlty", "Rekor", "SARIF"],
+	"cSpell.words": ["cloc", "outbase", "qlty", "Rekor", "SARIF", "USERCONFIG"],
 	"github-actions.workflows.pinned.workflows": [".github/workflows/publish.yml"]
 }
