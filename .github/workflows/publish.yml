@@ -50,15 +50,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
+          cache: pnpm
+          cache-dependency-path: ./pnpm-lock.yaml
           node-version: latest
-          registry-url: "https://registry.npmjs.org"
-          token: "" # .npmrc へ token を書かせない(OIDC を確実に使う)
+          # registry-url: "https://registry.npmjs.org"
+          # token: "" # .npmrc へ token を書かせない(OIDC を確実に使う)
 
       - name: (DEBUG) Show versions of Node.js, npm, and pnpm
         run: node -v && npm -v && pnpm -v
 
-      - name: (DEBUG) Show .npmrc
-        run: cat "${NPM_CONFIG_USERCONFIG}"
+      # - name: (DEBUG) Show .npmrc
+      #   run: cat "${NPM_CONFIG_USERCONFIG}"
 
       - name: Install dependencies (pnpm install)
         run: pnpm install --frozen-lockfile
@@ -92,7 +94,7 @@ jobs:
           fi
         # Trusted publishing を使うと provenance は自動生成されるので --provenance は不要
         env:
-          NODE_AUTH_TOKEN: "" # 念のため publish 前も空
+          NODE_AUTH_TOKEN: "" # 念のため
 
 # # おまけ。releases にもtgzをアップロードする
 # - name: build package
