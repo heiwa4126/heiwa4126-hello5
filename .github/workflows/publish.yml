@@ -1,6 +1,5 @@
 name: Publish to npm
 # Direct publishing to npmjs from GitHub using pnpm and npm with OIDC Trusted Publishing
-
 on:
   push:
     tags:
@@ -8,6 +7,10 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+"
       # プリリリースのみ: 例) v1.2.3-rc.1, v1.2.3-beta など(必ず '-' が付く)
       - "v[0-9]+.[0-9]+.[0-9]+-*"
+
+defaults:
+  run:
+    shell: bash
 
 concurrency:
   group: publish-${{ github.ref }}
@@ -19,11 +22,11 @@ jobs:
     if: github.repository_owner == github.actor
     uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@375a0e8ebdc98e99b02ac4338a724f5750f21213 # v2.3.1
     permissions:
-      actions: read # Required to upload SARIF file to CodeQL
-      security-events: write # Require writing security events to upload SARIF file to security tab
-      contents: read # Only need to read contents
+      actions: read # reusable workflow の実行に必要
+      security-events: write # 脆弱性スキャン結果(SARIF形式)を  GitHub の Security タブにアップロードするために必要
+      contents: read # リポジトリの内容を読み取るために必要
     with:
-      scan-args: "-r ."
+      scan-args: "-L ./pnpm-lock.yaml"
 
   publish:
     # Only run if pushed by repository owner and after OSV scan passes
@@ -72,6 +75,7 @@ jobs:
       - name: Check if prerelease version
         run: |
           # タグ名から 'v' プレフィックスを除去してバージョンを取得
+          # 今回は GITHUB_REF_NAME は 'v1.2.3' または 'v1.2.3-rc.1' の形式であることが保証されている
           VERSION=${GITHUB_REF_NAME#v}
           # ハイフン(SemVerのprerelease区切り)が含まれているかで判定
           if [[ $VERSION == *-* ]]; then
