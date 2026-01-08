@@ -178,3 +178,7 @@ osv-scan ジョブの "Print Code Scanning URL"
 - CLI(Node を使う)
 
 今回 Node 版とブラウザ版で同じコードが使える(Buffer とか DOM 直操作とかないので)。
+
+## osv-scanner の job テスト中
+
+GitHub の Code scanning alerts は、デフォルトブランチでのスキャン結果のみを Security タブに表示します。
