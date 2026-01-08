@@ -58,8 +58,8 @@ jobs:
 
       - name: (DEBUG) Show versions of Node.js, npm, and pnpm
         run: node -v && npm -v && pnpm -v
-      - name: (DEBUG) Show .npmrc
-        run: cat "${NPM_CONFIG_USERCONFIG}"
+      # - name: (DEBUG) Show .npmrc
+      #   run: cat "${NPM_CONFIG_USERCONFIG}"
 
       - name: Install dependencies (pnpm install)
         run: pnpm install --frozen-lockfile
