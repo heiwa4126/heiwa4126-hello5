@@ -53,11 +53,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
-          cache: pnpm
-          cache-dependency-path: ./pnpm-lock.yaml
           node-version: latest
-          # registry-url: "https://registry.npmjs.org"
-          # token: "" # .npmrc へ token を書かせない(OIDC を確実に使う)
+          cache: pnpm
+          # cache-dependency-path: pnpm-lock.yaml
+      # これは cache: pnpm の場合のデフォルト値なので不要.
+      # action/setup-node のソースコード (src/cache-utils.ts参照)
+      # registry-url: "https://registry.npmjs.org"
+      # token: "" # .npmrc へ token を書かせない(OIDC を確実に使う)
 
       - name: (DEBUG) Show versions of Node.js, npm, and pnpm
         run: node -v && npm -v && pnpm -v
@@ -72,31 +74,13 @@ jobs:
       # - run: npm test
       ## このプロジェクトでは prepublishOnly に書いてあるので不要
 
-      - name: Check if prerelease version
-        run: |
-          # タグ名から 'v' プレフィックスを除去してバージョンを取得
-          # 今回は GITHUB_REF_NAME は 'v1.2.3' または 'v1.2.3-rc.1' の形式であることが保証されている
-          VERSION=${GITHUB_REF_NAME#v}
-          # ハイフン(SemVerのprerelease区切り)が含まれているかで判定
-          if [[ $VERSION == *-* ]]; then
-            tag_option="dev"
-          else
-            tag_option=""
-          fi
-          # 環境変数として設定
-          echo "TAG_OPTION=$tag_option" >> "$GITHUB_ENV"
-          # ログ用出力
-          echo "Version: $VERSION"
-          echo "Tag option: $tag_option"
-
       - name: Publish to npm via OIDC (Trusted publishing)
         run: |
-          if [[ -n $TAG_OPTION ]]; then
-            npm publish --access public --tag "$TAG_OPTION"
+          if [[ $GITHUB_REF_NAME == *-* ]]; then
+            npm publish --access public --tag dev
           else
             npm publish --access public
           fi
-        # Trusted publishing を使うと provenance は自動生成されるので --provenance は不要
         env:
           NODE_AUTH_TOKEN: "" # 念のため
 
