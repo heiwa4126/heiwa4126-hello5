@@ -35,8 +35,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: npmjs
     permissions:
-      # contents: read
-      contents: write # for releases
+      contents: read
+      # contents: write # for releases
       id-token: write # OIDC に必須
     steps:
       - name: Checkout
@@ -55,17 +55,11 @@ jobs:
         with:
           node-version: latest
           cache: pnpm
-          # cache-dependency-path: pnpm-lock.yaml
-      # これは cache: pnpm の場合のデフォルト値なので不要.
-      # action/setup-node のソースコード (src/cache-utils.ts参照)
-      # registry-url: "https://registry.npmjs.org"
-      # token: "" # .npmrc へ token を書かせない(OIDC を確実に使う)
 
       - name: (DEBUG) Show versions of Node.js, npm, and pnpm
         run: node -v && npm -v && pnpm -v
-
-      # - name: (DEBUG) Show .npmrc
-      #   run: cat "${NPM_CONFIG_USERCONFIG}"
+      - name: (DEBUG) Show .npmrc
+        run: cat "${NPM_CONFIG_USERCONFIG}"
 
       - name: Install dependencies (pnpm install)
         run: pnpm install --frozen-lockfile
