@@ -18,8 +18,8 @@ concurrency:
 
 jobs:
   osv-scan:
-    # Only run if pushed by repository owner
     if: github.repository_owner == github.actor
+    ## Only run if pushed by repository owner
     uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@375a0e8ebdc98e99b02ac4338a724f5750f21213 # v2.3.1
     permissions:
       actions: read # reusable workflow の実行に必要
@@ -29,8 +29,8 @@ jobs:
       scan-args: "-L ./pnpm-lock.yaml"
 
   publish:
-    # Only run if pushed by repository owner and after OSV scan passes
     if: github.repository_owner == github.actor
+    ## Only run if pushed by repository owner and after OSV scan passes...
     needs: osv-scan
     runs-on: ubuntu-latest
     environment: npmjs
@@ -53,15 +53,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
-          node-version: latest
+          node-version: "lts/*"
           cache: pnpm
 
-      - name: (DEBUG) Show versions of Node.js, npm, and pnpm
-        run: node -v && npm -v && pnpm -v
-      # - name: (DEBUG) Show .npmrc
-      #   run: cat "${NPM_CONFIG_USERCONFIG}"
+      # - run: npm install -g npm@latest
+      # 最近はおおむね不要. nodeの最新LTS版バンドルnpmで十分
 
-      - name: Install dependencies (pnpm install)
+      - name: "INFO: Show versions of Node.js, npm, and pnpm"
+        run: node -v && npm -v && pnpm -v
+
+      - name: "INFO: Show .npmrc (if exists)"
+        # actions/setup-node で自動生成される .npmrc の中身を確認する
+        run: test -n "${NPM_CONFIG_USERCONFIG}" && test -f "${NPM_CONFIG_USERCONFIG}" && cat "${NPM_CONFIG_USERCONFIG}" || echo "NPM_CONFIG_USERCONFIG not found"
+        ## 今回は registry-url: も scope: も指定していないので .npmrc は自動生成されない
+
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       # - run: npm run build --if-present
@@ -69,12 +75,7 @@ jobs:
       ## このプロジェクトでは prepublishOnly に書いてあるので不要
 
       - name: Publish to npm via OIDC (Trusted publishing)
-        run: |
-          if [[ $GITHUB_REF_NAME == *-* ]]; then
-            npm publish --access public --tag dev
-          else
-            npm publish --access public
-          fi
+        run: npm publish --access public $([[ $GITHUB_REF_NAME == *-* ]] && echo "--tag dev")
         env:
           NODE_AUTH_TOKEN: "" # 念のため
 
