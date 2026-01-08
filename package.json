@@ -88,8 +88,5 @@
 	},
 	"engines": {
 		"node": ">=18.0.0"
-	},
-	"dependencies": {
-		"lodash": "4.17.15"
 	}
 }
