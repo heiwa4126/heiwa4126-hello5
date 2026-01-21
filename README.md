@@ -104,6 +104,7 @@ Hello!
 
 ```bash
 # Install dependencies
+pnpm audit
 pnpm install
 
 # lint, test, clean, build, pack and smoke test (without publishing)
