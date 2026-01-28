@@ -24,6 +24,7 @@
 		"!dist/**/*.map"
 	],
 	"scripts": {
+		"preinstall": "pnpm audit",
 		"cli": "tsx ./src/cli.ts",
 		"build": "tsdown",
 		"test": "vitest run --coverage",
@@ -37,7 +38,7 @@
 		"smoke-test": "node examples/ex1.mjs && node examples/ex1.cjs && tsx examples/ex1.ts  && node examples/ex3.cjs && node dist/cli.js -h",
 		"prepack": "clean-publish-scripts -c",
 		"postpack": "clean-publish-scripts -r",
-		"ver": "pnpm pkg get version",
+		"ver": "pnpm pkg get version --loglevel=error",
 		"start": "node ./scripts/test_server.mjs",
 		"trivy": "trivy config . && trivy fs --exit-code 1 --severity HIGH,CRITICAL .",
 		"sbom": "trivy fs --scanners vuln --format spdx-json --output sbom.spdx.json .",
@@ -80,7 +81,7 @@
 		"@hono/node-server": "^1.19.9",
 		"@types/node": "^25.0.10",
 		"@vitest/coverage-v8": "4.0.18",
-		"hono": "^4.11.5",
+		"hono": "^4.11.7",
 		"npm-run-all2": "^8.0.4",
 		"tsdown": "^0.20.1",
 		"tsx": "^4.21.0",
