@@ -48,7 +48,7 @@
 		"lizard:all": "lizard -EDuplicate .",
 		"smells:all": "qlty smells --all --quiet",
 		"qlty": "qlty metrics --functions --all --quiet",
-		"epub": "pandoc -f gfm -t epub README.md -o README.epub --metadata title='heiwa4126-hello5 (@heiwa4126/hello5)'",
+		"epub": "scripts/epub.sh",
 		"g": "run-s prepublishOnly format:all osv-scan"
 	},
 	"keywords": [

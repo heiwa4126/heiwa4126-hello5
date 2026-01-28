@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 /*
 Hono を使ったシンプルなテストサーバー
 
