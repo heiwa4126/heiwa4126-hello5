@@ -17,16 +17,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  osv-scan:
-    if: github.repository_owner == github.actor
-    ## Only run if pushed by repository owner
-    uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@2a387edfbe02a11d856b89172f6e978100177eb4 # v2.3.2
-    permissions:
-      actions: read # reusable workflow の実行に必要
-      security-events: write # 脆弱性スキャン結果(SARIF形式)を  GitHub の Security タブにアップロードするために必要
-      contents: read # リポジトリの内容を読み取るために必要
-    with:
-      scan-args: "-L ./pnpm-lock.yaml"
+  # osv-scan:
+  #   if: github.repository_owner == github.actor
+  #   ## Only run if pushed by repository owner
+  #   uses: google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@2a387edfbe02a11d856b89172f6e978100177eb4 # v2.3.2
+  #   permissions:
+  #     actions: read # reusable workflow の実行に必要
+  #     security-events: write # 脆弱性スキャン結果(SARIF形式)を  GitHub の Security タブにアップロードするために必要
+  #     contents: read # リポジトリの内容を読み取るために必要
+  #   with:
+  #     scan-args: "-L ./pnpm-lock.yaml"
 
   publish:
     if: github.repository_owner == github.actor
@@ -40,6 +40,6 @@ jobs:
       id-token: write # OIDC に必須
     steps:
       - name: Build and Publish
-        uses: heiwa4126/reusable-workflows/build-pnpm-package-and-publish/action.yml@bec761034a01aa4f05753ff3aeee2b8ae5a42e26 # v0.0.3
+        uses: heiwa4126/reusable-workflows/build-pnpm-package-and-publish@bec761034a01aa4f05753ff3aeee2b8ae5a42e26 # v0.0.3
         with:
           checkout: true
