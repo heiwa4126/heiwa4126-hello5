@@ -24,7 +24,7 @@
 		"!dist/**/*.map"
 	],
 	"scripts": {
-		"preinstall": "pnpm audit --loglevel=error",
+		"preinstall": "pnpm audit",
 		"cli": "tsx ./src/cli.ts",
 		"build": "tsdown",
 		"test": "vitest run --coverage",
@@ -32,7 +32,7 @@
 		"test:watch": "vitest",
 		"clean": "rm -rf dist",
 		"prepublishOnly": "run-s lint test clean build smoke-test",
-		"lint": "biome lint . && pnpm audit --loglevel=error",
+		"lint": "biome lint . && pnpm audit",
 		"format": "biome format --write .",
 		"format:all": "pnpm pkg fix --loglevel=error && biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
 		"smoke-test": "node examples/ex1.mjs && node examples/ex1.cjs && tsx examples/ex1.ts  && node examples/ex3.cjs && node dist/cli.js -h",
