@@ -9,7 +9,8 @@ npm プロジェクトを署名付きで npmjs に公開する練習プロジェ
 (npm の [@heiwa4126/hello4](https://www.npmjs.com/package/@heiwa4126/hello4))
 との違いは
 
-- [tsup](https://github.com/egoist/tsup) にした
+- [egoist/tsup](https://github.com/egoist/tsup) にした
+- さらに [rolldown/tsdown](https://github.com/rolldown/tsdown/) にした
 - npm から pnpm にした
 - pnpm で GitHub から npmjs に direct publishing できるか試す
   - 出来た。パッケージのインストールまで pnpm でやって `npm publish` で行ける
