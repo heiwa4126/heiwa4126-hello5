@@ -16,7 +16,11 @@ importers:
         version: 0.0.4
       '@hono/node-server':
         specifier: ^1.19.9
+<<<<<<< HEAD
         version: 1.19.9(hono@4.12.1)
+=======
+        version: 1.19.9(hono@4.11.10)
+>>>>>>> origin/main
       '@types/node':
         specifier: ^25.3.0
         version: 25.3.0
@@ -24,8 +28,13 @@ importers:
         specifier: 4.0.18
         version: 4.0.18(vitest@4.0.18(@types/node@25.3.0)(tsx@4.21.0))
       hono:
+<<<<<<< HEAD
         specifier: ^4.12.1
         version: 4.12.1
+=======
+        specifier: ^4.11.9
+        version: 4.11.10
+>>>>>>> origin/main
       npm-run-all2:
         specifier: ^8.0.4
         version: 8.0.4
@@ -708,8 +717,13 @@ packages:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
 
+<<<<<<< HEAD
   hono@4.12.1:
     resolution: {integrity: sha512-hi9afu8g0lfJVLolxElAZGANCTTl6bewIdsRNhaywfP9K8BPf++F2z6OLrYGIinUwpRKzbZHMhPwvc0ZEpAwGw==}
+=======
+  hono@4.11.10:
+    resolution: {integrity: sha512-kyWP5PAiMooEvGrA9jcD3IXF7ATu8+o7B3KCbPXid5se52NPqnOpM/r9qeW2heMnOekF4kqR1fXJqCYeCLKrZg==}
+>>>>>>> origin/main
     engines: {node: '>=16.9.0'}
 
   hookable@6.0.1:
@@ -1212,9 +1226,15 @@ snapshots:
 
   '@heiwa4126/clean-publish-scripts@0.0.4': {}
 
+<<<<<<< HEAD
   '@hono/node-server@1.19.9(hono@4.12.1)':
     dependencies:
       hono: 4.12.1
+=======
+  '@hono/node-server@1.19.9(hono@4.11.10)':
+    dependencies:
+      hono: 4.11.10
+>>>>>>> origin/main
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -1522,7 +1542,11 @@ snapshots:
 
   has-flag@4.0.0: {}
 
+<<<<<<< HEAD
   hono@4.12.1: {}
+=======
+  hono@4.11.10: {}
+>>>>>>> origin/main
 
   hookable@6.0.1: {}
 
