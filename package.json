@@ -77,10 +77,10 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.4",
 		"@heiwa4126/clean-publish-scripts": "^0.0.4",
-		"@hono/node-server": "^1.19.9",
+		"@hono/node-server": "^1.19.11",
 		"@types/node": "^25.3.0",
 		"@vitest/coverage-v8": "4.0.18",
-		"hono": "^4.12.2",
+		"hono": "^4.12.5",
 		"npm-run-all2": "^8.0.4",
 		"tsdown": "^0.20.3",
 		"tsx": "^4.21.0",
