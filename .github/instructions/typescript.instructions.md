@@ -1,7 +1,7 @@
 ---
-name: 'TypeScript Standards'
-description: 'Coding conventions for TypeScript files'
-applyTo: '**/*.ts'
+name: "TypeScript Standards"
+description: "Coding conventions for TypeScript files"
+applyTo: "**/*.ts"
 ---
 
 # TypeScript Standards

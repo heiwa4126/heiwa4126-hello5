@@ -59,9 +59,9 @@ ESM.sh:
 <div id="app">loading...</div>
 
 <script type="module">
-  import { hello } from "https://esm.sh/@heiwa4126/hello5";
+	import { hello } from "https://esm.sh/@heiwa4126/hello5";
 
-  document.getElementById("app").innerText = hello();
+	document.getElementById("app").innerText = hello();
 </script>
 ```
 
@@ -78,7 +78,7 @@ Other CDNs:
 
 <script src="https://cdn.jsdelivr.net/npm/@heiwa4126/hello5/dist/index.global.min.js"></script>
 <script>
-  document.getElementById("app").innerText = Heiwa4126Hello5.hello();
+	document.getElementById("app").innerText = Heiwa4126Hello5.hello();
 </script>
 ```
 

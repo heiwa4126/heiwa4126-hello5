@@ -2,6 +2,38 @@
 	"name": "@heiwa4126/hello5",
 	"version": "0.0.10-alpha.11",
 	"description": "TypeScript hello world library with dual ES modules/CommonJS support. Features GitHub Actions trusted publishing to npmjs with Sigstore attestation.",
+	"keywords": [
+		"cli",
+		"commonjs",
+		"demo",
+		"esm",
+		"example",
+		"github-actions",
+		"hello-world",
+		"learning",
+		"sigstore",
+		"trusted-publishing",
+		"typescript"
+	],
+	"homepage": "https://github.com/heiwa4126/heiwa4126-hello5#readme",
+	"bugs": {
+		"url": "https://github.com/heiwa4126/heiwa4126-hello5/issues"
+	},
+	"license": "MIT",
+	"author": "heiwa4126 <heiwa4126@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/heiwa4126/heiwa4126-hello5.git"
+	},
+	"bin": {
+		"heiwa4126-hello5": "dist/cli.js"
+	},
+	"files": [
+		"dist/**/*.js",
+		"dist/**/*.cjs",
+		"dist/**/*.d.ts",
+		"!dist/**/*.map"
+	],
 	"type": "module",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -14,15 +46,6 @@
 			"require": "./dist/index.cjs"
 		}
 	},
-	"bin": {
-		"heiwa4126-hello5": "dist/cli.js"
-	},
-	"files": [
-		"dist/**/*.js",
-		"dist/**/*.cjs",
-		"dist/**/*.d.ts",
-		"!dist/**/*.map"
-	],
 	"scripts": {
 		"preinstall": "pnpm audit",
 		"cli": "tsx ./src/cli.ts",
@@ -32,9 +55,11 @@
 		"test:watch": "vitest",
 		"clean": "rm -rf dist",
 		"prepublishOnly": "run-s lint test clean build smoke-test",
-		"lint": "biome lint . && pnpm audit",
-		"format": "biome format --write .",
-		"format:all": "pnpm pkg fix --loglevel=error && biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
+		"format": "oxfmt",
+		"lint": "oxlint",
+		"check": "oxfmt && oxlint --fix",
+		"format:pkg": "pnpm pkg fix --loglevel=error",
+		"format:all": "run-s format:pkg check",
 		"smoke-test": "node examples/ex1.mjs && node examples/ex1.cjs && tsx examples/ex1.ts  && node examples/ex3.cjs && node dist/cli.js -h",
 		"prepack": "clean-publish-scripts -c",
 		"postpack": "clean-publish-scripts -r",
@@ -51,41 +76,19 @@
 		"qlty": "qlty metrics --functions --all --quiet",
 		"g": "run-s prepublishOnly format:all osv-scan"
 	},
-	"keywords": [
-		"hello-world",
-		"example",
-		"demo",
-		"typescript",
-		"esm",
-		"commonjs",
-		"cli",
-		"learning",
-		"sigstore",
-		"trusted-publishing",
-		"github-actions"
-	],
-	"author": "heiwa4126 <heiwa4126@gmail.com>",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/heiwa4126/heiwa4126-hello5.git"
-	},
-	"bugs": {
-		"url": "https://github.com/heiwa4126/heiwa4126-hello5/issues"
-	},
-	"homepage": "https://github.com/heiwa4126/heiwa4126-hello5#readme",
-	"license": "MIT",
 	"devDependencies": {
-		"@biomejs/biome": "^2.4.7",
-		"@heiwa4126/clean-publish-scripts": "^0.0.4",
+		"@heiwa4126/clean-publish-scripts": "^0.0.6",
 		"@hono/node-server": "^1.19.11",
 		"@types/node": "^25.5.0",
-		"@vitest/coverage-v8": "4.0.18",
-		"hono": "^4.12.7",
+		"@vitest/coverage-v8": "4.1.2",
+		"hono": "^4.12.9",
 		"npm-run-all2": "^8.0.4",
-		"tsdown": "^0.20.3",
+		"oxfmt": "^0.42.0",
+		"oxlint": "^1.57.0",
+		"tsdown": "^0.21.5",
 		"tsx": "^4.21.0",
-		"typescript": "^5.9.3",
-		"vitest": "^4.1.0"
+		"typescript": "^6.0.2",
+		"vitest": "^4.1.2"
 	},
 	"engines": {
 		"node": ">=18.0.0"

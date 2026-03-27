@@ -42,15 +42,15 @@ curl "https://learn.microsoft.com/api/search?search=Azure+Blob+Storage&locale=ja
 
 ```json
 {
-  "count": 5,
-  "results": [
-    {
-      "title": "Azure Blob Storage の概要",
-      "url": "https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-blobs-introduction",
-      "description": "...",
-      "lastModified": "2024-11-01"
-    }
-  ]
+	"count": 5,
+	"results": [
+		{
+			"title": "Azure Blob Storage の概要",
+			"url": "https://learn.microsoft.com/ja-jp/azure/storage/blobs/storage-blobs-introduction",
+			"description": "...",
+			"lastModified": "2024-11-01"
+		}
+	]
 }
 ```
 
