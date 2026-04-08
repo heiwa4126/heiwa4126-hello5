@@ -13,7 +13,7 @@ importers:
         version: 0.0.6
       '@hono/node-server':
         specifier: ^1.19.12
-        version: 1.19.12(hono@4.12.10)
+        version: 1.19.13(hono@4.12.10)
       '@types/node':
         specifier: ^25.5.2
         version: 25.5.2
@@ -259,8 +259,8 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@hono/node-server@1.19.12':
-    resolution: {integrity: sha512-txsUW4SQ1iilgE0l9/e9VQWmELXifEFvmdA1j6WFh/aFPj99hIntrSsq/if0UWyGVkmrRPKA1wCeP+UCr1B9Uw==}
+  '@hono/node-server@1.19.13':
+    resolution: {integrity: sha512-TsQLe4i2gvoTtrHje625ngThGBySOgSK3Xo2XRYOdqGN1teR8+I7vchQC46uLJi8OF62YTYA3AhSpumtkhsaKQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
@@ -1410,7 +1410,7 @@ snapshots:
 
   '@heiwa4126/clean-publish-scripts@0.0.6': {}
 
-  '@hono/node-server@1.19.12(hono@4.12.10)':
+  '@hono/node-server@1.19.13(hono@4.12.10)':
     dependencies:
       hono: 4.12.10
 
