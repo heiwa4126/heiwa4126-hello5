@@ -76,19 +76,22 @@
 		"qlty": "qlty metrics --functions --all --quiet",
 		"g": "run-s prepublishOnly format:all osv-scan"
 	},
+	"dependencies": {
+		"vite": "8.0.16"
+	},
 	"devDependencies": {
 		"@heiwa4126/clean-publish-scripts": "^0.0.6",
-		"@hono/node-server": "^2.0.4",
-		"@types/node": "^25.9.2",
-		"@vitest/coverage-v8": "4.1.8",
+		"@hono/node-server": "^2.0.5",
+		"@types/node": "^25.9.3",
+		"@vitest/coverage-v8": "4.1.9",
 		"hono": "^4.12.25",
-		"npm-run-all2": "^9.0.1",
-		"oxfmt": "^0.54.0",
-		"oxlint": "^1.69.0",
+		"npm-run-all2": "^9.0.2",
+		"oxfmt": "^0.55.0",
+		"oxlint": "^1.70.0",
 		"tsdown": "^0.22.2",
 		"tsx": "^4.22.4",
 		"typescript": "^6.0.3",
-		"vitest": "^4.1.8"
+		"vitest": "^4.1.9"
 	},
 	"engines": {
 		"node": ">=18.0.0"
