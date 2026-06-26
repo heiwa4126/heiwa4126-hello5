@@ -47,7 +47,7 @@
 		}
 	},
 	"scripts": {
-		"preinstall": "pnpm audit",
+		"prepare": "pnpm audit && husky",
 		"cli": "tsx ./src/cli.ts",
 		"build": "tsdown",
 		"test": "vitest run --coverage",
@@ -85,6 +85,7 @@
 		"@types/node": "^25.9.3",
 		"@vitest/coverage-v8": "4.1.9",
 		"hono": "^4.12.25",
+		"husky": "^9.1.7",
 		"npm-run-all2": "^9.0.2",
 		"oxfmt": "^0.55.0",
 		"oxlint": "^1.70.0",
