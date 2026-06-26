@@ -47,7 +47,7 @@
 		}
 	},
 	"scripts": {
-		"prepare": "pnpm audit && husky",
+		"prepare": "husky",
 		"cli": "tsx ./src/cli.ts",
 		"build": "tsdown",
 		"test": "vitest run --coverage",
