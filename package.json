@@ -77,17 +77,17 @@
 		"g": "run-s prepublishOnly format:all osv-scan"
 	},
 	"dependencies": {
-		"vite": "8.1.5"
+		"vite": "8.2.2"
 	},
 	"devDependencies": {
 		"@heiwa4126/clean-publish-scripts": "^0.0.6",
 		"@hono/node-server": "^2.1.1",
 		"@types/node": "^26.2.0",
-		"@vitest/coverage-v8": "4.1.10",
+		"@vitest/coverage-v8": "4.1.11",
 		"hono": "^4.13.2",
 		"husky": "^9.1.7",
 		"npm-run-all2": "^9.0.3",
-		"oxfmt": "^0.60.0",
+		"oxfmt": "^0.65.0",
 		"oxlint": "^1.78.0",
 		"tsdown": "^0.22.14",
 		"tsx": "^4.23.12",
