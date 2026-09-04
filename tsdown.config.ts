@@ -16,7 +16,7 @@ export default defineConfig([
 		sourcemap: false,
 		minify: false,
 		dts: true,
-		outExtensions: fixCjsExtension,
+		outExtensions: fixCjsExtension
 	},
 	{
 		// cli (ESM only)
@@ -28,7 +28,7 @@ export default defineConfig([
 		sourcemap: false,
 		minify: true,
 		dts: false,
-		outExtensions: fixCjsExtension,
+		outExtensions: fixCjsExtension
 	},
 	// Classic Script for Browser
 	{
@@ -44,7 +44,7 @@ export default defineConfig([
 		outputOptions: {
 			// outExtensionsでは対応できない。hello.iife.global.js になる
 			// [name] はエントリファイル名 (hello) に置き換わります
-			entryFileNames: "[name].global.js",
-		},
-	},
+			entryFileNames: "[name].global.js"
+		}
+	}
 ]);

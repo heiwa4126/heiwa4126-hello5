@@ -92,16 +92,16 @@ app.use(
 	"/dist/*",
 	serveStatic({
 		root: "./",
-		rewriteRequestPath: (path) => path,
-	}),
+		rewriteRequestPath: (path) => path
+	})
 );
 
 // examples/local_http/ の静的ファイルを提供
 app.use(
 	"/*",
 	serveStatic({
-		root: `./${DOC_ROOT}`,
-	}),
+		root: `./${DOC_ROOT}`
+	})
 );
 
 const port = 3000;
@@ -113,5 +113,5 @@ Server running at http://localhost:${port}/`);
 
 serve({
 	fetch: app.fetch,
-	port,
+	port
 });

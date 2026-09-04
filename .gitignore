@@ -234,6 +234,7 @@ tags
 
 tmp/*
 *.tmp
+tmp.*
 tmp
 *.spdx.json
 .qlty/*
